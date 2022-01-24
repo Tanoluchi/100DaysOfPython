@@ -1,7 +1,3 @@
-from time import process_time_ns
-from traceback import print_tb
-
-
 print("""
             ___
            /]_/
