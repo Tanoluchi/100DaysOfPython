@@ -1,4 +1,3 @@
-from operator import le
 import random
 from arte_ahorcado import stages, logo, gameover
 from lista_palabras import list_words
