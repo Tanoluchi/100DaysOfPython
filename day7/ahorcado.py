@@ -1,4 +1,3 @@
-from operator import le
 import random
 from arte_ahorcado import stages, logo, gameover
 from lista_palabras import list_words
@@ -15,7 +14,7 @@ print(logo)
 
 while True:
     # Verificamos si aun le quedan vidas, y si ya no hay guiones bajos en nuestra lista, si no se encuentra más significa que se descubrio la palabra.
-    if lives > 0 and "_" in hidden_word:
+    if lives > -1 and "_" in hidden_word:
         incorrect = True
         # Pedimos al usuario que ingrese una letra.
         while incorrect:
@@ -47,11 +46,11 @@ while True:
                 lives -= 1
         else:
             print(f"\nLo lamento, la letra '{chossen_letter}' ya fue ingresada anteriormente. Por favor ingresa una nueva letra. ")
-    elif lives == 0:
-        print(f"{stages[lives]}")
+    elif lives == -1:
         print(f"{gameover}")
         print(f"\nLamentablemente has perdido!\nLa palabra era: {random_word}")
         break
     elif not "_" in hidden_word:
         print(f"\nFelicidades has ganado!\nLa palabra es: {random_word}")
         break
+
